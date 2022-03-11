@@ -8,6 +8,7 @@ import { HeroScreen } from '../components/hero/HeroScreen';
 export const DashBoardRoutes = () => {
   return (
     <>
+    
         <Navbar/>
         <div className='container'>
 

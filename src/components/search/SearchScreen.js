@@ -9,12 +9,13 @@ export const SearchScreen = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const {q=''}=queryString.parse(location.search);
-  const [values,handleInputChange,reset]=useForm({
+  const [values,handleInputChange]=useForm({
     searchText:q
   })
   // solamente se llama cuando q cambie de valor
-  const heroFilter=useMemo(()=>getHeroByName(q)),[q];
   const {searchText}=values;
+  const heroFilter =  useMemo(() => getHeroByName(q), [q])
+  //const heroFilter=getHeroByName(q);
   const handleSearch= (e)=>{
     e.preventDefault();
     //console.log(searchText);
